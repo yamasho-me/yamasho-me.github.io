@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+  <script>
+    // ページ描画前にテーマを適用
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.body.classList.remove('dark');
+      }
+    } catch (e) { }
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ナビゲーション -->
@@ -16,6 +30,9 @@
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects・Links</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button id="theme-toggle" aria-label="change-thema" class="theme-toggle-btn">Thema</button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -28,5 +45,7 @@
     <p>JJ0TYU &frasl; 9</p>
   </section>
 
+  <script src="script.js"></script>
 </body>
+
 </html>
