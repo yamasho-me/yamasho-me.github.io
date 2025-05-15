@@ -37,7 +37,11 @@ body:not(.dark) header {
     color: #222;
 }
 
-
+html.dark body header,
+body.dark header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
 
 nav ul {
   display: flex;
