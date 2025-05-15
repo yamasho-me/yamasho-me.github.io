@@ -27,16 +27,17 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* 半透明黒 */
   z-index: 100;
 }
 
 /* ライトモードのヘッダー */
+html:not(.dark) body header,
 body:not(.dark) header {
-    background-color: rgba(255,255,255,0.8);
-    color: #222;
+  background-color: rgba(255,255,255,0.8);
+  color: #222;
 }
 
+/* ダークモードのヘッダー */
 html.dark body header,
 body.dark header {
   background-color: rgba(0, 0, 0, 0.8);
@@ -97,6 +98,7 @@ section {
 }
 
 /* セクション背景色 */
+#index,
 #about,
 #projects,
 #contact {
@@ -104,6 +106,7 @@ section {
 }
 
 /* ライトモードのセクション背景色 */
+body:not(.dark) #index,
 body:not(.dark) #about,
 body:not(.dark) #projects,
 body:not(.dark) #contact {
