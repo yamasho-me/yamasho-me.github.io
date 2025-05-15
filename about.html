@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <script>
-    // ページ描画前にテーマを適用
-    try {
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark');
-      }
-    } catch(e){}
-  </script>
+<script>
+  // ページ描画前にテーマを適用（デフォルトはダーク）
+  try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
+    }
+  } catch (e) { }
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - My Portfolio</title>
