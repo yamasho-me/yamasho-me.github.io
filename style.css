@@ -471,3 +471,32 @@ body:not(.dark) .callsign,
 body:not(.dark) .name {
   color: #222;
 }
+
+/* style.cssに追加（任意） */
+.about-list {
+  list-style: disc inside;
+  margin: 2rem auto 0 auto;
+  padding: 0;
+  max-width: 600px;
+  text-align: left;
+  color: #fff;
+  opacity: 0.85;
+}
+.about-list li {
+  margin-bottom: 0.7em;
+  font-size: 1.1rem;
+}
+
+/* style.cssに追加 */
+.profile-brief {
+  margin-bottom: 1.5em;
+  font-size: 1.05rem;
+  color: #fff;         /* 文字色を白に */
+  text-align: left;
+  line-height: 1.7;
+  opacity: 1;          /* しっかり白く */
+}
+.profile-brief span {
+  display: block;
+  margin-bottom: 0.1em;
+}

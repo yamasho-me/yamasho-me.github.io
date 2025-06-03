@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <script>
     try {
@@ -11,13 +12,14 @@
         document.documentElement.classList.add('dark');
         document.body.classList.add('dark');
       }
-    } catch (e) {}
+    } catch (e) { }
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header>
@@ -36,9 +38,15 @@
 
   <section id="about">
     <h2>About</h2>
-    <p>ここに自己紹介を書く。</p>
+    <div class="profile-brief">
+      <span class="born">Born: 茨城県つくば市</span><br>
+      <span class="raised">Raised: 長野県須坂市</span><br>
+      <span class="studied">Studied: 長野工業高等専門学校 電子情報工学科</span><br>
+      <span class="studies">Studies: 金沢大学 融合学域 スマート創成科学類</span>
+    </div>
   </section>
 
   <script src="script.js"></script>
 </body>
+
 </html>
