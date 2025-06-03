@@ -1,3 +1,16 @@
+// ページ描画前にテーマを適用（デフォルトはダーク）
+try {
+  const theme = localStorage.getItem('theme');
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+    document.body.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+    document.body.classList.add('dark');
+  }
+} catch (e) {}
+
+
 class ThemeToggler {
   constructor(buttonId, target = document.body) {
     this.button = document.getElementById(buttonId);
@@ -65,3 +78,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 new ThemeToggler("theme-toggle");
+
