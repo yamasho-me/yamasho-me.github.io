@@ -716,3 +716,16 @@ body:not(.dark) .nav-list li button:hover {
 body:not(.dark) .menu-toggle {
   color: #222;
 }
+
+/* style.cssに追加 */
+.site-footer {
+  text-align: center;
+  padding: 2em 0 1em 0;
+  color: #aaa;
+  font-size: 0.95em;
+  background: none;
+  letter-spacing: 0.05em;
+}
+body:not(.dark) .site-footer {
+  color: #555;
+}

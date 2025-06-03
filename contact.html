@@ -12,7 +12,7 @@
         document.documentElement.classList.add('dark');
         document.body.classList.add('dark');
       }
-    } catch (e) {}
+    } catch (e) { }
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,58 +39,13 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <form class="contact-form" onsubmit="submitContactForm(event)">
-      <label for="name">お名前</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">メールアドレス</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">メッセージ</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">送信</button>
-    </form>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScHfKN0-XZKC2aJ4UG1BAFwR8CmDbI6PREdN9C1JtJqI_e6RA/viewform?embedded=true"
+      width="100%" height="839" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
   </section>
 
-  <!-- Firebase SDK（v9 Modular）を読み込み -->
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyAA8_BwFbwJT6Ca4zVuiOHtQ8VLYO7BCGw",
-      authDomain: "myhp-a6eb0.firebaseapp.com",
-      projectId: "myhp-a6eb0",
-      storageBucket: "myhp-a6eb0.firebasestorage.app",
-      messagingSenderId: "915010238744",
-      appId: "1:915010238744:web:6828ab1f63bc1efb3c066d",
-      measurementId: "G-CFCTSTRVCH"
-    };
-
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    window.submitContactForm = async function (e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      try {
-        await addDoc(collection(db, "contacts"), {
-          name, email, message, timestamp: new Date()
-        });
-        alert("送信しました！");
-        e.target.reset();
-      } catch (err) {
-        alert("送信に失敗しました");
-      }
-    }
-  </script>
+  <footer class="site-footer">
+    <small>&copy; 2025 Shogo YAMAGISHI</small>
+  </footer>
 
   <script src="script.js"></script>
 </body>
