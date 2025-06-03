@@ -3,7 +3,7 @@
 <head>
   <script>
     try {
-      const theme = localStorage.getItem('theme');
+      const theme = localStorage.getItem('theme'); // ← これが必須
       if (theme === 'light') {
         document.documentElement.classList.remove('dark');
         document.body.classList.remove('dark');

@@ -555,3 +555,7 @@ body:not(.dark) .contact-form button {
   background: #222;
   color: #fff;
 }
+
+body:not(.dark) .profile-brief {
+  color: #222;
+}
