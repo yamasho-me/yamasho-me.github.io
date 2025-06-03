@@ -405,23 +405,19 @@ body:not(.dark) .social-icons a img {
 
 .openbadges {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.2em;
+  justify-content: center;
   align-items: center;
+  margin-top: 1em;
+  flex-wrap: wrap;
+}
+.openbadges a {
+  display: inline-block;
 }
 .openbadges .badge {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #fff;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  transition: transform 0.2s;
-  border: 2px solid #fff;
-}
-.openbadges .badge:hover {
-  transform: scale(1.08) rotate(-2deg);
-  border-color: #181818;
 }
 
 /* レスポンシブ対応 */
@@ -434,6 +430,11 @@ body:not(.dark) .social-icons a img {
     font-size: 2.2rem;
     flex-direction: column;
     gap: 0;
+  }
+  .openbadges {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
   }
 }
 
@@ -708,4 +709,10 @@ body:not(.dark) .nav-list li button:hover {
     pointer-events: auto;
     transform: translateY(0) scale(1);
   }
+}
+
+/* style.cssに追加・修正 */
+/* ライトテーマ時のメニューバーアイコン（ハンバーガー）の色を黒に */
+body:not(.dark) .menu-toggle {
+  color: #222;
 }

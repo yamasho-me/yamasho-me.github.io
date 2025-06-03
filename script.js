@@ -11,12 +11,13 @@ class ThemeToggler {
 
   applySavedTheme() {
     const saved = localStorage.getItem(this.themeKey);
-    if (saved === "dark") {
-      this.target.classList.add("dark");
-      this.html.classList.add("dark");
-    } else {
+    if (saved === "light") {
       this.target.classList.remove("dark");
       this.html.classList.remove("dark");
+    } else {
+      // savedが"dark"またはnull/undefinedならダークテーマ
+      this.target.classList.add("dark");
+      this.html.classList.add("dark");
     }
   }
 
