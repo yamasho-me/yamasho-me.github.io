@@ -64,5 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
   new AutoGalleryScroller('.angled-gallery', 2); // 常にスクロール
 });
 
+// メニューボタンの開閉制御
+document.addEventListener("DOMContentLoaded", function() {
+  const menuBtn = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('.nav-list');
+  if (menuBtn && navList) {
+    menuBtn.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  }
+});
+
 new ThemeToggler("theme-toggle");
 

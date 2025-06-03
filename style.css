@@ -605,3 +605,107 @@ body:not(.dark) .verilog-icon {
   opacity: 1;
   transform: scale(1.1);
 }
+
+nav {
+  position: relative;
+  background: transparent;
+}
+.menu-toggle {
+  display: none;
+  background: none;         /* ← 背景色を消す */
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 0;         /* ← 角丸をなくす */
+  width: auto;              /* ← サイズを自動に */
+  height: auto;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1001;
+  box-shadow: none;         /* ← 影も消す */
+  transition: color 0.2s, transform 0.2s;
+}
+.menu-toggle:active {
+  background: none;
+  transform: scale(0.95);
+}
+
+/* メニューリスト */
+.nav-list {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0.7em 1.5em;
+  align-items: center;
+  background: rgba(30,30,30,0.92);
+  border-radius: 2em;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* メニューアイテム */
+.nav-list li {
+  border-radius: 1.2em;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.nav-list li a, .nav-list li button {
+  display: block;
+  padding: 0.5em 1.2em;
+  border-radius: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1em;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.nav-list li a:hover, .nav-list li button:hover {
+  background: #444;
+  color: #fff;
+  transform: translateY(-2px) scale(1.07);
+}
+
+/* ライトテーマ対応 */
+body:not(.dark) .nav-list {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+body:not(.dark) .nav-list li a, 
+body:not(.dark) .nav-list li button {
+  color: #222;
+}
+body:not(.dark) .nav-list li a:hover, 
+body:not(.dark) .nav-list li button:hover {
+  background: #e0e0e0;
+  color: #222;
+}
+
+/* スマホ用 */
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 70px;
+    right: 1rem;
+    left: 1rem;
+    background: rgba(30,30,30,0.97);
+    border-radius: 2em;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-30px) scale(0.98);
+    transition: opacity 0.35s cubic-bezier(.4,2,.6,1), transform 0.35s cubic-bezier(.4,2,.6,1);
+  }
+  .nav-list.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+}
