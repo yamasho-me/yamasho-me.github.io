@@ -1,28 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <script>
-    // ページ描画前にテーマを適用（デフォルトはダーク）
-    try {
-      const theme = localStorage.getItem('theme');
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-        document.body.classList.remove('dark');
-      } else {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark');
-      }
-    } catch (e) { }
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Hello, World.</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- ナビゲーション -->
   <header>
     <nav>
       <ul>
@@ -37,26 +21,42 @@
     </nav>
   </header>
 
-  <!-- トップセクション -->
-  <section id="index">
-    <h1>Hello, World.</h1>
-    <h2>- Shogo YAMAGISHI -</h2>
-    <p>JJ0TYU &frasl; 9</p>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/shogo.yamagishi.7/" target="_blank" aria-label="Facebook">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
-      </a>
-      <a href="https://www.instagram.com/radi_tyu/" target="_blank" aria-label="Instagram">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-      </a>
-      <a href="https://github.com/yamasho-me" target="_blank" aria-label="GitHub">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
-      </a>
-    </div>
-    <h3>------ ただいまHP作成中です ------</h3>
-  </section>
-
+  <main>
+    <section id="hero" class="intro-section">
+      <div class="hello-block">
+        <h1 class="hello-world">
+          <span class="hello-gradient">Hello,</span>
+          <span class="hello-outline">World.</span>
+        </h1>
+        <div class="profile-row">
+          <div class="profile-info">
+            <h2 class="name">Shogo YAMAGISHI</h2>
+            <div class="affiliation">Kanazawa University</div>
+            <div class="faculty">
+              &emsp;College of Transdisciplinary Sciences for Innovation<br>
+              &emsp;School of Smart Technology and Innovation
+            </div>
+            <div class="callsign">JJ0TYU/9</div>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/shogo.yamagishi.7/" target="_blank" aria-label="Facebook">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/radi_tyu/" target="_blank" aria-label="Instagram">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+              </a>
+              <a href="https://github.com/yamasho-me" target="_blank" aria-label="GitHub">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+              </a>
+            </div>
+          </div>
+          <div class="openbadges">
+            <img src="images/openbadge_digital.png" alt="Open Badge for Digital Promotion Committee Members" class="badge" a href="https://www.openbadge-global.com/api/v1.0/openBadge/v2/Wallet/Public/GetAssertionShare/MlpOYTU5ZnF3K3V5enA4RmFFV2Jqdz09">
+            <img src="images/openbadge_daa.png" alt="Open Badge for Digital Accessibility Advisor" class="badge" a href="https://www.openbadge-global.com/api/v1.0/openBadge/v2/Wallet/Public/GetAssertionShare/U0hrb29vdUdxc1RYaWtEUGZPR2FWdz09">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
-
 </html>

@@ -27,4 +27,41 @@ class ThemeToggler {
   }
 }
 
+class AutoGalleryScroller {
+  constructor(selector, speed = 1) {
+    this.gallery = document.querySelector(selector);
+    if (!this.gallery) return;
+    this.speed = speed; // px単位の毎フレーム移動量
+    this.rafId = null;
+    this.animate = this.animate.bind(this);
+    this.start();
+  }
+
+  animate() {
+    if (!this.gallery) return;
+    // 無条件でスクロールし続ける
+    let next = this.gallery.scrollLeft + this.speed;
+    // 端まで行ったら戻す
+    if (next >= this.gallery.scrollWidth - this.gallery.clientWidth) {
+      next = 0;
+    }
+    this.gallery.scrollLeft = next;
+    this.rafId = requestAnimationFrame(this.animate);
+  }
+
+  start() {
+    if (this.rafId) cancelAnimationFrame(this.rafId);
+    this.rafId = requestAnimationFrame(this.animate);
+  }
+
+  stop() {
+    if (this.rafId) cancelAnimationFrame(this.rafId);
+    this.rafId = null;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  new AutoGalleryScroller('.angled-gallery', 2); // 常にスクロール
+});
+
 new ThemeToggler("theme-toggle");
