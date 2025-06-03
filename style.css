@@ -440,3 +440,28 @@ body:not(.dark) .social-icons a img {
   text-align: left;
   display: block;
 }
+
+/* ダークテーマ */
+.intro-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #181818;
+  color: #fff;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* ライトテーマ */
+body:not(.dark) .intro-section {
+  background: #f5f5f5;
+  color: #222;
+}
+body:not(.dark) .hello-gradient,
+body:not(.dark) .affiliation,
+body:not(.dark) .faculty,
+body:not(.dark) .callsign,
+body:not(.dark) .name {
+  color: #222;
+}
