@@ -438,7 +438,6 @@ body:not(.dark) .social-icons a img {
   }
 }
 
-/* style.cssに追加 */
 .faculty {
   font-size: 1rem;
   color: #fff;
@@ -446,6 +445,7 @@ body:not(.dark) .social-icons a img {
   margin-bottom: 0.5em;
   text-align: left;
   display: block;
+  white-space: nowrap;
 }
 
 /* ダークテーマ */
