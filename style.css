@@ -729,3 +729,11 @@ body:not(.dark) .menu-toggle {
 body:not(.dark) .site-footer {
   color: #555;
 }
+
+
+.licenses {
+  margin: 0.3em 0 0.7em 0;
+  font-size: 1em;
+  color: #888;
+  letter-spacing: 0.03em;
+}
