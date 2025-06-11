@@ -160,6 +160,30 @@
   box-shadow: 0 2px 8px rgba(0,92,186,0.08);
   margin-top: 1em;
 }
+/* ライトテーマ時も .video-hero.new-hero の背景を黒系に */
+body:not(.dark) .video-hero.new-hero {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  color: #fff;
+}
+body:not(.dark) .video-hero.new-hero .hero-title,
+body:not(.dark) .video-hero.new-hero .hero-lead,
+body:not(.dark) .video-hero.new-hero .hero-offer,
+body:not(.dark) .video-hero.new-hero .caption,
+body:not(.dark) .video-hero.new-hero .desc {
+  color: #fff !important;
+}
+/* ヒーローセクションのテキスト背景をしっかり黒で塗りつぶす */
+.video-hero.new-hero .hero-text {
+  background: #111; /* 完全な黒に近い色で塗りつぶし */
+  border-radius: 1.2em;
+  padding: 2em 2em 1.5em 2em;
+  display: inline-block;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  max-width: 520px;
+  color: #fff;
+  opacity: 0.97; /* 少しだけ透過したい場合は0.97、完全不透明なら1 */
+}
+
 @media (max-width: 700px) {
   .video-gallery {
     flex-direction: column;
@@ -181,5 +205,9 @@
   .hero-image img {
     width: 90vw;
     max-width: 350px;
+  }
+  .video-hero.new-hero .hero-text {
+    padding: 1.2em 1em;
+    max-width: 98vw;
   }
 }
