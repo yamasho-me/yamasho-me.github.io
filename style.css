@@ -365,6 +365,7 @@ body:not(.dark) .hello-outline {
   font-weight: 500;
   letter-spacing: 0.08em;
   color: #fff;
+  margin-bottom: 0;
 }
 
 .affiliation {
@@ -736,4 +737,12 @@ body:not(.dark) .site-footer {
   font-size: 1em;
   color: #888;
   letter-spacing: 0.03em;
+}
+
+.degree {
+  font-size: 1em;
+  color: #888;
+  margin: 0.2em 0 0.5em 0;
+  letter-spacing: 0.03em;
+  margin-top: 0;
 }
