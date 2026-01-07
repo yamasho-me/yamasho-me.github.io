@@ -502,6 +502,22 @@ body:not(.dark) .name {
   display: block;
   margin-bottom: 0.1em;
 }
+/* 論文DOIリンクのスタイル */
+.profile-brief a {
+  color: #6ab0ff;      /* ダークモード用：明るい青 */
+  text-decoration: none;
+  transition: color 0.2s, opacity 0.2s;
+}
+.profile-brief a:hover {
+  color: #9fd4ff;      /* ホバー時はさらに明るく */
+  text-decoration: underline;
+}
+body:not(.dark) .profile-brief a {
+  color: #0066cc;      /* ライトモード用：濃い青 */
+}
+body:not(.dark) .profile-brief a:hover {
+  color: #0055aa;      /* ホバー時は少し暗く */
+}
 
 /* style.cssに追加 */
 .contact-form {
