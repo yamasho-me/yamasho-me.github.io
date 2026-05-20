@@ -459,6 +459,18 @@ body:not(.dark) .social-icons a img {
   white-space: nowrap;
 }
 
+.research-info {
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.6;
+  margin-bottom: 0.5em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  white-space: nowrap;
+}
+
 /* ダークテーマ */
 .intro-section {
   min-height: 100vh;
@@ -479,6 +491,7 @@ body:not(.dark) .intro-section {
 body:not(.dark) .hello-gradient,
 body:not(.dark) .affiliation,
 body:not(.dark) .faculty,
+body:not(.dark) .research-info,
 body:not(.dark) .work-info,
 body:not(.dark) .callsign,
 body:not(.dark) .name {
