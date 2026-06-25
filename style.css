@@ -786,3 +786,103 @@ body:not(.dark) .site-footer {
   letter-spacing: 0.03em;
   margin-top: 0;
 }
+
+/* ===== indexページ：スマホ表示の横はみ出し修正 ===== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  #hero.intro-section {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100svh;
+    padding: 5rem 1rem 2rem;
+    overflow: hidden;
+  }
+
+  .hello-block {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hello-world {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 11vw, 2.6rem);
+    letter-spacing: 0.08em;
+  }
+
+  .profile-row {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    overflow: hidden;
+  }
+
+  .profile-info {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .name {
+    max-width: 100%;
+    font-size: clamp(1.35rem, 7vw, 1.7rem);
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .faculty,
+  .work-info,
+  .research-info {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .research-info span {
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .social-icons {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .openbadges {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+}
