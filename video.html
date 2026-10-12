@@ -1,89 +1,69 @@
 <!DOCTYPE html>
-<html lang="ja">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>映像制作・配信</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="video_style.css">
-</head>
-  <!-- Google tag (gtag.js) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Production | Shogo Yamagishi</title>
+  <meta name="description" content="Video production, live streaming and sound for schools, events, communities and businesses.">
+  <meta name="theme-color" content="#101211">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Shogo Yamagishi">
+  <meta property="og:title" content="Video Production | Shogo Yamagishi">
+  <meta property="og:description" content="Video production, live streaming and sound for schools, events, communities and businesses.">
+  <meta property="og:url" content="https://yamasho-me.github.io/video.html">
+  <link rel="canonical" href="https://yamasho-me.github.io/video.html">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="video_style.css">
+  <script src="script.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z63X3VL8E5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-  
     gtag('config', 'G-Z63X3VL8E5');
   </script>
-  
-<body>
-    <header>
-        <nav>
-            <button class="menu-toggle" aria-label="メニューを開く">&#9776;</button>
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects・Links</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li>
-                    <button id="theme-toggle" aria-label="change-theme" class="theme-toggle-btn">theme</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="video-hero new-hero">
-            <div class="hero-inner">
-                <div class="hero-text">
-                    <h1 class="hero-title">映像制作・配信・音響</h1>
-                    <p class="hero-lead">
-                        学校行事・イベント・YouTube配信など<br>
-                        多様な現場での経験とノウハウを活かし、<br>
-                        企画から撮影・編集・配信・音響まで<br>
-                        ワンストップでサポートします。
-                    </p>
-                    <p class="hero-offer">
-                        ご依頼・ご相談はお気軽にどうぞ。
-                    </p>
-                </div>
-                <div class="hero-image">
-                    <img src="images/edit.jpg" alt="編集画面" />
-                </div>
-            </div>
-        </section>
-
-        <section class="video-gallery">
-            <div class="video-card">
-                <img src="/images/bloadcast.jpg" alt="イベント 配信・撮影・音響" />
-                <div class="caption">イベント 配信・撮影・音響</div>
-                <div class="desc">
-                    ARISSスクールコンタクト<br>ISSの宇宙飛行士と小学生がアマチュア無線で交信するイベントのライブ配信を担当。<br>会場と配信の音響・映像・YouTube配信までワンストップで行っています。
-                    <br><a href="https://www.youtube.com/channel/UCDDSLuY3tUztEAo96hi9ZkA">各種映像はこちらから</a>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="video-iframe-wrap">
-                    <img src="/images/camera.jpg" alt="イベント 配信・撮影・音響" />
-                </div>
-                <div class="caption">各種映像制作</div>
-                <div class="desc">各種映像制作を行っています。地域PR、企業PR等<br>現場の雰囲気をそのままお届けします。</div>
-            </div>
-        </section>
-
-        <div class="video-offer">
-            映像制作・配信のご依頼も承ります！<br>
-            お気軽に <a href="contact.html" style="color:#ff6f61;text-decoration:underline;">Contact</a> からご相談ください。
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <small>&copy; 2026 Shogo YAMAGISHI</small>
-    </footer>
-    <script src="script.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Shogo Yamagishi home"><span class="brand-mark" aria-hidden="true">SY<span>.</span></span><span class="brand-name">Shogo Yamagishi</span></a>
+      <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" aria-current="true">Works</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode">
+          <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+          <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Open menu">MENU +</button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero container video-intro"><h1><span class="bilingual">Video Production<span class="ja" lang="ja">映像制作</span></span></h1><div class="video-intro-bottom"><a class="text-link" href="contact.html">Contact <span class="arrow" aria-hidden="true">↗</span></a></div></section>
+    <section class="section container split-section" aria-labelledby="production-heading"><div><h2 class="section-title" id="production-heading"><span class="bilingual">Services<span class="ja" lang="ja">対応内容</span></span></h2></div><div><p class="body-copy"><span class="bilingual">Video production for schools, events, communities and businesses. Services include planning, filming, editing, live streaming and venue sound.<span class="ja" lang="ja">学校行事・イベント、地域・企業PRの映像制作。企画・撮影・編集・配信・会場音響に対応。</span></span></p><div class="service-list"><div><span class="mono">01</span><h3><span class="bilingual">Planning &amp; Filming<span class="ja" lang="ja">企画・撮影</span></span></h3><p>Planning and filming for events and promotional videos.</p></div><div><span class="mono">02</span><h3><span class="bilingual">Video Editing<span class="ja" lang="ja">映像編集</span></span></h3><p>Editing footage into promotional and event films.</p></div><div><span class="mono">03</span><h3><span class="bilingual">Live Streaming &amp; Sound<span class="ja" lang="ja">ライブ配信・音響</span></span></h3><p>YouTube live streaming and on-site audiovisual management.</p></div></div></div></section>
+    <section class="section container" aria-labelledby="film-heading"><div><h2 class="section-title" id="film-heading"><span class="bilingual">Promotional &amp; Event Films<span class="ja" lang="ja">PR映像・記録映像</span></span></h2><p class="section-intro"><span class="bilingual">Promotional films for communities and businesses, and event documentation, from filming to editing.<span class="ja" lang="ja">地域・企業のPR映像、イベントの記録映像。撮影から編集まで対応。</span></span></p><div class="tag-list"><span class="tag">PR films</span><span class="tag">Event films</span><span class="tag">DaVinci Resolve</span></div></div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top"><p class="footer-note">Shogo Yamagishi</p><nav class="social-links" aria-label="Footer links">
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/shogo-yamagishi-39870836b/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://www.facebook.com/shogo.yamagishi.7/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        <a href="https://x.com/radio_tyu" target="_blank" rel="noopener noreferrer">X ↗</a>
+        <a href="https://www.instagram.com/radi_tyu/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://github.com/yamasho-me" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav></div>
+      <div class="footer-bottom"><small>© <span data-year>2026</span> Shogo Yamagishi</small><a class="back-to-top" href="#top">BACK TO TOP ↑</a></div>
+    </div>
+  </footer>
 </body>
-
 </html>

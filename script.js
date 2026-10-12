@@ -1,80 +1,61 @@
-class ThemeToggler {
-  constructor(buttonId, target = document.body) {
-    this.button = document.getElementById(buttonId);
-    this.target = target;
-    this.themeKey = "theme";
-    this.html = document.documentElement;
+/* Apply the saved appearance before rendering. Content also works without JS. */
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+  try {
+    if (localStorage.getItem('theme') === 'light') root.dataset.theme = 'light';
+  } catch (_) { /* Storage may be unavailable in private browsing. */ }
 
-    this.applySavedTheme();
-    this.button.addEventListener("click", () => this.toggleTheme());
-  }
-
-  applySavedTheme() {
-    const saved = localStorage.getItem(this.themeKey);
-    if (saved === "light") {
-      this.target.classList.remove("dark");
-      this.html.classList.remove("dark");
-    } else {
-      // savedが"dark"またはnull/undefinedならダークテーマ
-      this.target.classList.add("dark");
-      this.html.classList.add("dark");
-    }
-  }
-
-  toggleTheme() {
-    const isDark = this.target.classList.toggle("dark");
-    this.html.classList.toggle("dark", isDark);
-    localStorage.setItem(this.themeKey, isDark ? "dark" : "light");
-  }
-}
-
-class AutoGalleryScroller {
-  constructor(selector, speed = 1) {
-    this.gallery = document.querySelector(selector);
-    if (!this.gallery) return;
-    this.speed = speed; // px単位の毎フレーム移動量
-    this.rafId = null;
-    this.animate = this.animate.bind(this);
-    this.start();
-  }
-
-  animate() {
-    if (!this.gallery) return;
-    // 無条件でスクロールし続ける
-    let next = this.gallery.scrollLeft + this.speed;
-    // 端まで行ったら戻す
-    if (next >= this.gallery.scrollWidth - this.gallery.clientWidth) {
-      next = 0;
-    }
-    this.gallery.scrollLeft = next;
-    this.rafId = requestAnimationFrame(this.animate);
-  }
-
-  start() {
-    if (this.rafId) cancelAnimationFrame(this.rafId);
-    this.rafId = requestAnimationFrame(this.animate);
-  }
-
-  stop() {
-    if (this.rafId) cancelAnimationFrame(this.rafId);
-    this.rafId = null;
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  new AutoGalleryScroller('.angled-gallery', 2); // 常にスクロール
-});
-
-// メニューボタンの開閉制御
-document.addEventListener("DOMContentLoaded", function() {
-  const menuBtn = document.querySelector('.menu-toggle');
-  const navList = document.querySelector('.nav-list');
-  if (menuBtn && navList) {
-    menuBtn.addEventListener('click', () => {
-      navList.classList.toggle('open');
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeButton = document.querySelector('.theme-toggle');
+    const updateThemeLabel = () => {
+      const light = root.dataset.theme === 'light';
+      if (themeButton) {
+        themeButton.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+        themeButton.setAttribute('title', light ? 'Dark mode' : 'Light mode');
+      }
+    };
+    updateThemeLabel();
+    themeButton?.addEventListener('click', () => {
+      const theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+      root.dataset.theme = theme;
+      try { localStorage.setItem('theme', theme); } catch (_) { /* Optional persistence. */ }
+      updateThemeLabel();
     });
-  }
-});
 
-new ThemeToggler("theme-toggle");
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.site-nav');
+    if (menuButton && navigation) {
+      const setMenu = (open, restoreFocus = false) => {
+        navigation.classList.toggle('is-open', open);
+        document.body.classList.toggle('menu-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menuButton.textContent = open ? 'CLOSE −' : 'MENU +';
+        if (restoreFocus) menuButton.focus();
+      };
+      menuButton.addEventListener('click', () => {
+        const open = menuButton.getAttribute('aria-expanded') !== 'true';
+        setMenu(open);
+        if (open) navigation.querySelector('a')?.focus();
+      });
+      navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('keydown', event => {
+        if (!navigation.classList.contains('is-open')) return;
+        if (event.key === 'Escape') { setMenu(false, true); return; }
+        if (event.key === 'Tab') {
+          const controls = [...navigation.querySelectorAll('a'), themeButton, menuButton].filter(Boolean);
+          const index = controls.indexOf(document.activeElement);
+          event.preventDefault();
+          const next = event.shiftKey ? (index <= 0 ? controls.length - 1 : index - 1) : (index + 1) % controls.length;
+          controls[next].focus();
+        }
+      });
+      window.matchMedia('(max-width: 760px)').addEventListener('change', event => {
+        if (!event.matches) setMenu(false);
+      });
+    }
 
+    document.querySelectorAll('[data-year]').forEach(element => { element.textContent = new Date().getFullYear(); });
+  });
+})();

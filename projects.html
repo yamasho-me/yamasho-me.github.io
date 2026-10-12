@@ -1,68 +1,74 @@
 <!DOCTYPE html>
-<html lang="ja">
-
+<html lang="en">
 <head>
-  <script>
-    try {
-      const theme = localStorage.getItem('theme'); // ← これが必須
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-        document.body.classList.remove('dark');
-      } else {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('dark');
-      }
-    } catch (e) { }
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects・Links</title>
+  <title>Works | Shogo Yamagishi</title>
+  <meta name="description" content="Canna School Contact project leadership, video production, science education and open data.">
+  <meta name="theme-color" content="#101211">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Shogo Yamagishi">
+  <meta property="og:title" content="Works | Shogo Yamagishi">
+  <meta property="og:description" content="Canna School Contact project leadership, video production, science education and open data.">
+  <meta property="og:url" content="https://yamasho-me.github.io/projects.html">
+  <link rel="canonical" href="https://yamasho-me.github.io/projects.html">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-
-</head>
-  <!-- Google tag (gtag.js) -->
+  <script src="script.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z63X3VL8E5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-  
     gtag('config', 'G-Z63X3VL8E5');
   </script>
-<body>
-
-  <header>
-    <nav>
-      <button class="menu-toggle" aria-label="メニューを開く">&#9776;</button>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects・Links</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li>
-          <button id="theme-toggle" aria-label="change-theme" class="theme-toggle-btn">theme</button>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="projects">
-    <h2>Projects・Links</h2>
-    <div class="project-list">
-      <a class="project-item" href="https://cannaschoolcontactteam.github.io/" target="_blank"
-        rel="noopener">カンナ・スクールコンタクト<br>(ARISSスクールコンタクト)</br></a>
-      <a class="project-item" href="projects.html" target="_blank" rel="noopener">映像制作・配信</a>
-      <a class="project-item"
-        href="https://www.s-johocenter.jp/%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E7%A7%91%E5%AD%A6%E3%82%AF%E3%83%A9%E3%83%96%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E5%8B%9F%E9%9B%86/"
-        target="_blank" rel="noopener">情報センター科学クラブ</a>
-      <a class="project-item" href="https://user.linkdata.org/user/shogoyamagishi/idea" target="_blank"
-        rel="noopener">オープンデータ関連の取組</a>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Shogo Yamagishi home"><span class="brand-mark" aria-hidden="true">SY<span>.</span></span><span class="brand-name">Shogo Yamagishi</span></a>
+      <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" aria-current="page">Works</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode">
+          <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+          <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Open menu">MENU +</button>
+      </div>
     </div>
-  </section>
+  </header>
+  <main id="main">
+    <section class="page-hero container"><h1><span class="bilingual">Works<span class="ja" lang="ja">活動</span></span></h1></section>
+    <section class="section archive-section container" aria-label="Works">
+      <ul class="works-list" id="work-list">
+        <li id="canna"><a href="https://cannaschoolcontactteam.github.io/" target="_blank" rel="noopener noreferrer"><span><span class="works-name"><span class="bilingual">Canna School Contact<span class="ja" lang="ja">カンナスクールコンタクト</span></span></span><span class="works-role"><span class="bilingual">Overall project leadership and management<span class="ja" lang="ja">プロジェクト全体の統括・マネジメント</span></span></span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="video.html"><span class="works-name"><span class="bilingual">Video Production<span class="ja" lang="ja">映像制作</span></span></span><span class="arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="https://www.s-johocenter.jp/%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E7%A7%91%E5%AD%A6%E3%82%AF%E3%83%A9%E3%83%96%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E5%8B%9F%E9%9B%86/" target="_blank" rel="noopener noreferrer"><span class="works-name"><span class="bilingual">Information Center Science Club<span class="ja" lang="ja">情報センター科学クラブ</span></span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="https://user.linkdata.org/user/shogoyamagishi/idea" target="_blank" rel="noopener noreferrer"><span class="works-name"><span class="bilingual">Open Data<span class="ja" lang="ja">オープンデータ</span></span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </section>
+  </main>
   <footer class="site-footer">
-    <small>&copy; 2026 Shogo YAMAGISHI</small>
+    <div class="container">
+      <div class="footer-top"><p class="footer-note">Shogo Yamagishi</p><nav class="social-links" aria-label="Footer links">
+        <a href="contact.html">Contact</a>
+        <a href="https://www.linkedin.com/in/shogo-yamagishi-39870836b/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://www.facebook.com/shogo.yamagishi.7/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        <a href="https://x.com/radio_tyu" target="_blank" rel="noopener noreferrer">X ↗</a>
+        <a href="https://www.instagram.com/radi_tyu/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://github.com/yamasho-me" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav></div>
+      <div class="footer-bottom"><small>© <span data-year>2026</span> Shogo Yamagishi</small><a class="back-to-top" href="#top">BACK TO TOP ↑</a></div>
+    </div>
   </footer>
-  <script src="script.js"></script>
 </body>
-
 </html>
